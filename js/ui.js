@@ -1,6 +1,15 @@
 class UI
 {
 
+    static clearAllFilmsToUI()
+    {
+        const filmList = document.getElementById('films');
+        while(filmList.firstElementChild !== null)
+        {
+            filmList.removeChild(filmList.firstElementChild);
+        }
+    }
+
     static deleteFilmFromUI(e)
     {
         e.parentElement.parentElement.remove();

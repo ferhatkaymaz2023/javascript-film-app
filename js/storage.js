@@ -2,6 +2,11 @@ class Storage
 {
 
 
+    static clearAllFilmFromStorage()
+    {
+        localStorage.removeItem('films');
+    }
+
     static getFilmsFromStorage()
     {
         let films;

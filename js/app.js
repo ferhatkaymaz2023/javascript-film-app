@@ -4,6 +4,7 @@ const secondCardBody = document.querySelectorAll('.card-body')[1];
 const titleElement = document.getElementById('title');
 const directorElement = document.getElementById('director');
 const urlElement = document.getElementById('url');
+const clearButton = document.getElementById('clear-films');
 
 
 addEventListeners();
@@ -16,7 +17,18 @@ function addEventListeners()
         UI.loadAllFilms(films);
     });
     secondCardBody.addEventListener('click',deleteFilm);
+    clearButton.addEventListener('click',clearAllFilms);
 }
+
+function clearAllFilms()
+{
+    if(confirm('Tüm filmleri, Silmek istediğinizden emin misiniz ?'))
+    {
+        UI.clearAllFilmsToUI();
+        Storage.clearAllFilmFromStorage();
+    }
+}
+
 
 function deleteFilm(e)
 {
