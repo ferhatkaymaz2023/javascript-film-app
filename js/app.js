@@ -29,5 +29,6 @@ function addTodo(e)
         Storage.addFilmToStorage(newFilm);
     }
 
+    UI.clearInputs(titleElement,directorElement,urlElement);
     e.preventDefault();
 }

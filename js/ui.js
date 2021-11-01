@@ -16,4 +16,11 @@ class UI
 
     }
 
+    static clearInputs(titleElement,directorElement,urlElement)
+    {
+        titleElement.value = '';
+        directorElement.value = '';
+        urlElement.value = '';
+    }
+
 }
