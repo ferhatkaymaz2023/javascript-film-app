@@ -10,6 +10,10 @@ addEventListeners();
 function addEventListeners()
 {
     form.addEventListener('submit',addTodo);
+    document.addEventListener('DOMContentLoaded',() => {
+        let films = Storage.getFilmsFromStorage();
+        UI.loadAllFilms(films);
+    });
 }
 
 function addTodo(e)
