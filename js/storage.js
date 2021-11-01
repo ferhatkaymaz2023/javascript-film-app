@@ -1,6 +1,6 @@
 class Storage 
 {
-    
+
 
     static getFilmsFromStorage()
     {
@@ -14,6 +14,24 @@ class Storage
         films.push(newFilm);
         localStorage.setItem('films',JSON.stringify(films));
     }
+    
+    static deleteFilmFromStorage(deleteFilm)
+    {
+        let films = this.getFilmsFromStorage();
+        films.forEach((film,index) => {
+            if(film.title === deleteFilm)
+            {
+                films.splice(index,1);
+            }
+        });
+        localStorage.setItem('films',JSON.stringify(films));
+    }
+
+
+
 
 
 }
+
+
+    

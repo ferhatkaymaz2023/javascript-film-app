@@ -1,6 +1,11 @@
 class UI
 {
 
+    static deleteFilmFromUI(e)
+    {
+        e.parentElement.parentElement.remove();
+    }
+
     static loadAllFilms(films)
     {
         let filmList = document.getElementById('films');
