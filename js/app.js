@@ -26,6 +26,7 @@ function addTodo(e)
     {
         const newFilm = new Film(title,director,url);
         UI.addTodoToUI(newFilm);
+        Storage.addFilmToStorage(newFilm);
     }
 
     e.preventDefault();
