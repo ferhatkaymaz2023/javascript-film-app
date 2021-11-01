@@ -20,13 +20,15 @@ function addTodo(e)
 
     if(title === '' || director === '' || url === '')
     {
-
+        UI.showMessages('danger','Boş değer giridiniz...');
     }
     else 
     {
         const newFilm = new Film(title,director,url);
         UI.addTodoToUI(newFilm);
         Storage.addFilmToStorage(newFilm);
+
+        UI.showMessages('success','Film, eklenmiştir ...');
     }
 
     UI.clearInputs(titleElement,directorElement,urlElement);

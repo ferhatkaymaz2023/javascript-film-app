@@ -23,4 +23,14 @@ class UI
         urlElement.value = '';
     }
 
+    static showMessages(type,message) 
+    {
+        const firstCardBody = document.querySelectorAll('.card-body')[0];
+        const div = document.createElement('div');
+        div.className = `alert alert-${type}`;
+        div.textContent = message;
+        firstCardBody.appendChild(div);
+        setTimeout(() => { div.remove() },1000);
+    }
+
 }
