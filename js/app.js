@@ -9,5 +9,24 @@ addEventListeners();
 
 function addEventListeners()
 {
-    
+    form.addEventListener('submit',addTodo);
+}
+
+function addTodo(e)
+{   
+    const title = titleElement.value.trim();
+    const director = directorElement.value.trim();
+    const url = urlElement.value.trim();
+
+    if(title === '' || director === '' || url === '')
+    {
+
+    }
+    else 
+    {
+        const newFilm = new Film(title,director,url);
+        UI.addTodoToUI(newFilm);
+    }
+
+    e.preventDefault();
 }
